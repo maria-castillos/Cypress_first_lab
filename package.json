@@ -1,0 +1,16 @@
+{
+  "name": "cypress_curso_qa",
+  "version": "1.0.0",
+  "description": "Test de practica",
+  "main": "index.js",
+  "scripts": {
+    "pruebas-edge": "cypress run --spec cypress/e2e/smoketestbanco.cy.js --browser edge",
+    "pruebas-chrome": "cypress run --spec cypress/e2e/smoketestbanco.cy.js --browser chrome",
+    "tests2":""
+  },
+  "author": "Maria Angelica Castillo",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.12.0"
+  }
+}
