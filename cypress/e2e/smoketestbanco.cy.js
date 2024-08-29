@@ -5,7 +5,7 @@ describe("Test suite - conjunto de pruebas", () => {
         cy.visit("http://zero.webappsecurity.com")
     
     })
-
+    // pagina de inicio
     it("Validar pagina de inicio",() => {
 
 
