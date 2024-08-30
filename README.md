@@ -1,105 +1,95 @@
-# Título del Proyecto
+# Cypress_first_lab
 
-Prueba basica de automatizacion para validar la pagina ZERO BANK 
+Pruebas automatizadas para validar la pagina ZERO BANK
 
-## Comenzando 🚀
+## Descripción
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+En esta pruebas verificamos que la pagina zero banck cumpliera con los requisitos del cliente como por ejemplo que los usuarios pudieran registrase, que las imagenes se mostraran como se debian y que los usuarios no tuvieran problema al transferir sus dineros a otra cuenta.
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+## Visuales
 
+Capturas de pantalla, videos o GIFs que demuestran lo que hace el proyecto y cómo usarlo.
 
 ### Pre-requisitos 📋
 
-- Instalar el editor Visual Studio Code
+Que vamos a necesitar para empezar ?
+
+- Instalar el editor visual studio code
 - Instalar Node.Js
 - Luego instalamos el manejador de paquetes NPM
-- Instalar cypress como dependencia en el proyecto a probar
-  
+- Por ultimo instalamos cypress como dependencia en el proyecto a probar 
+
 ### Instalación 🔧
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
+Una guía paso a paso sobre cómo configurar el entorno de desarrollo e instalar todas las dependencias.
 
-_Dí cómo será ese paso_
+## Ejecutando las Pruebas ⚙️
 
+```bash
+# describe("Test suite - conjunto de pruebas", () => {
+    
+    beforeEach(() => {
+        // runs before each test in the block
+        cy.visit("http://zero.webappsecurity.com")
+    
+    })
+    // pagina de inicio
+    it("Validar pagina de inicio",() => {
+
+
+        cy.get(".active > img").should("be.visible")
+        cy.get(".active > .custom > h4").contains("Online Banking")
+    
+    })
+
+    it("Prueba E2E - transferencia de fondos", () => {
+
+        
+        cy.get("#signin_button").click()
+        cy.get("#user_login").type("username")
+        cy.get("#user_password").type("password")
+        cy.get(".btn").click()
+        cy.get('#transfer_funds_tab > a').click() 
+        cy.get('#tf_fromAccountId').select(1)
+        cy.get('#tf_toAccountId').select(5)
+        cy.get('#tf_amount').type("300")
+        cy.get('#tf_description').type("Transferencia de prueba")
+        cy.get('#btn_submit').click()
+        cy.get('#btn_submit').click()
+        cy.get('.alert').contains("You successfully submitted your transaction")
+
+    })
+
+    it("Prueba de validacion del grafico", () => {
+
+        
+        cy.get("#signin_button").click()
+        cy.get("#user_login").type("username")
+        cy.get("#user_password").type("password")
+        cy.get(".btn").click()
+        cy.get('#money_map_tab > a').click()
+        cy.get('#ext-sprite-1259').should("be.visible")
+        cy.get('#ext-sprite-1167 > tspan').click()
+        cy.get('#ext-sprite-1259').should("not.be.visible")
+
+
+
+
+
+    })
 ```
-Da un ejemplo
-```
 
-_Y repite_
+### Pruebas de Principio a Fin 🔩
 
-```
-hasta finalizar
-```
+Explica qué cubren estas pruebas, por qué son importantes y cómo interpretar sus resultados.
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
-
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
 
 ## Despliegue 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
-
-## Construido con 🛠️
-
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
-
-## Autores ✒️
-
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
-
-* **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
-* **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
-
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
-
-## Licencia 📄
-
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
-
-## Expresiones de Gratitud 🎁
-
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* Dona con cripto a esta dirección: `0xf253fc233333078436d111175e5a76a649890000`
-* etc.
+Instrucciones sobre cómo desplegar esto en un sistema en vivo o ambiente de producción.
 
 
 
----
-⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊
+
+
+
