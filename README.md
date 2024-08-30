@@ -11,9 +11,9 @@ En esta pruebas verificamos que la pagina zero banck cumpliera con los requisito
 Que vamos a necesitar para empezar ?
 
 - Instalar el editor visual studio code
-- Instalar Node.Js
+- Instalar Node.Js v.22.7.0
 - Luego instalamos el manejador de paquetes NPM
-- Por ultimo instalamos cypress como dependencia en el proyecto a probar 
+- Por ultimo instalamos cypress como dependencia en el proyecto a probar version 13.12.0
 
 ### Instalación 🔧
 
